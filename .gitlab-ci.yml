@@ -36,6 +36,6 @@ deploy:
     - ssh-keyscan 157.230.115.210 >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
     - ssh $SSH_USER@157.230.115.210 "docker pull $DOCKER_USERNAME/backend:latest && docker run -d --name backend -p 8080:8080 $DOCKER_USERNAME/backend:latest"
-    - ssh $SSH_USER@157.230.115.210 "docker pull $DOCKER_USERNAME/frontend:latest && docker run -d --name frontend -p 4040:4040 $DOCKER_USERNAME/frontend:latest"
+    - ssh $SSH_USER@157.230.115.210 "docker pull $DOCKER_USERNAME/frontend:latest && docker run -d --name frontend -p 80:4040 $DOCKER_USERNAME/frontend:latest"
   only:
     - main
