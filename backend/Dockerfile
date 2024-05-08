@@ -17,10 +17,10 @@ FROM openjdk:17-jdk
 # Set the working directory
 WORKDIR /app
 
-# Copy the built JAR file from the previous stage
+# Copy the built JAR file from the previous stage 
 COPY --from=build /app/target/*.jar app.jar
 
-# Expose the port on which the Spring Boot application will run
+# Expose the port on which the Spring Boot application will run 
 EXPOSE 8080
 
 # Command to run the application
