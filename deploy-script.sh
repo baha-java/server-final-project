@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# Определение переменных
+SSH_PRIVATE_KEY="-----BEGIN OPENSSH PRIVATE KEY-----
+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
+-----END OPENSSH PRIVATE KEY-----"
+SSH_USER="root"
+
+# Установка openssh-client (если еще не установлен)
+apk add --no-cache openssh-client
+
+# Инициализация агента SSH
+eval $(ssh-agent -s)
+
+# Добавление SSH ключа в агент
+echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+
+# Создание директории для SSH ключей и установка прав
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+
+# Добавление хоста в список известных хостов SSH
+ssh-keyscan 157.230.115.210 >> ~/.ssh/known_hosts
+chmod 644 ~/.ssh/known_hosts
+
+# Загрузка и запуск образов на удаленном сервере через SSH
+ssh "$SSH_USER@157.230.115.210" "docker pull $DOCKER_USERNAME/backend:latest && docker run -d --name backend -p 8080:8080 $DOCKER_USERNAME/backend:latest"
+ssh "$SSH_USER@157.230.115.210" "docker pull $DOCKER_USERNAME/frontend:latest && docker run -d --name frontend -p 3000:3000 $DOCKER_USERNAME/frontend:latest"
